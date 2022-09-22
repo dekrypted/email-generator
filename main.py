@@ -21,6 +21,10 @@ except:
     print('\x1b[1;31mError: \x1b[1;33mInvalid Amount! Press ENTER to continue.\x1b[0m')
     os._exit(0)
 
+if amount > (2**(len(address[0]) - 1))*10:
+    input(f'\x1b[1;33mWARNING: \x1b[1;33mAbove maximum number of emails for this address. Lowering to {(2**(len(address[0]) - 1))*10}\x1b[0m')
+    amount = (2**(len(address[0]) - 1))*10
+
 print(f'\x1b[1;32m{os.getlogin()}@GmailGen$ \x1b[1;34mGenerating {amount} Emails!\x1b[0m')
 generated = []
 for i in range(amount):
